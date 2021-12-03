@@ -39,6 +39,8 @@ type User {
   id: ID!
   name: String!
   email: String!
+  group: Int
+  socialCreditScore: Int
   links: [Link!]!
 }
 

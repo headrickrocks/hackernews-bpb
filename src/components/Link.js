@@ -52,16 +52,25 @@ class Link extends Component {
             <a href={this.props.link.url} target="_blank">{this.props.link.description}</a>
           </div>
           <div className="f6 lh-copy gray">
-            {this.props.link.votes.length} votes ~ first voter 
-            {this.props.link.votes[0] 
+            {this.props.link.votes.length} votes 
+            {/* ~ first voter  */}
+            {/* {this.props.link.votes[0] 
               ? this.props.link.votes[0].user.name 
-              : 'hi'}{''} | by{' '}
+              : 'hi'}{''} | by{' '} */}
             {this.props.link.postedBy
               ? this.props.link.postedBy.name
               : 'Unknown'}{' '}
             {timeDifferenceForDate(this.props.link.createdAt)}
             {this.props.link.votes[0]
-              ? ' ___vote ids: first '+this.props.link.votes[0].id + ' last '+this.props.link.votes[this.props.link.votes.length-1].id
+              ? ' ___ first voter: '+this.props.link.votes[0].user.name + ' last voter: '+this.props.link.votes[this.props.link.votes.length-1].user.name
+              : ''}
+            {/* below ternary operator is new */}
+            {/* {this.props.link.votes[0]
+              ? ' ___user names: first '+this.props.link.votes[0].user.name + ' last '+this.props.link.votes[this.props.link.votes.length-1].user.name
+              : ''} */}
+
+            {this.props.link.votes[0]
+              ? ' ____ social credit score: first: '+this.props.link.votes[0].user.socialCreditScore + ' last: '+this.props.link.votes[this.props.link.votes.length-1].user.socialCreditScore
               : ''}
           </div>
         </div>
