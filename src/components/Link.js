@@ -69,9 +69,9 @@ class Link extends Component {
               ? ' ___user names: first '+this.props.link.votes[0].user.name + ' last '+this.props.link.votes[this.props.link.votes.length-1].user.name
               : ''} */}
 
-            {this.props.link.votes[0]
+            {/* {this.props.link.votes[0]
               ? ' ____ social credit score: first: '+this.props.link.votes[0].user.socialCreditScore + ' last: '+this.props.link.votes[this.props.link.votes.length-1].user.socialCreditScore
-              : ''}
+              : ''} */}
           </div>
         </div>
       </div>

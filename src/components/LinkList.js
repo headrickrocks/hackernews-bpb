@@ -25,8 +25,6 @@ export const FEED_QUERY = gql`
           user {
             id
             name
-            group
-            socialCreditScore
           }
         }
         createdAt
