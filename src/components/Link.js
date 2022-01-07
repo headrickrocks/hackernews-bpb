@@ -64,7 +64,9 @@ class Link extends Component {
             {this.props.link.votes[0]
               ? ' ___ first voter: '+this.props.link.votes[0].user.name + ' last voter: '+this.props.link.votes[this.props.link.votes.length-1].user.name
               : ''}
-            {/* below ternary operator is new */}
+              
+             ___tag: {this.props.link.tag}
+             
             {/* {this.props.link.votes[0]
               ? ' ___user names: first '+this.props.link.votes[0].user.name + ' last '+this.props.link.votes[this.props.link.votes.length-1].user.name
               : ''} */}
