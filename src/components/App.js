@@ -10,7 +10,7 @@ import CreateLink from './CreateLink'
 import Header from './Header'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import Search from './Search'
-import Hi from './Hi'
+import FilteredList from './FilteredList'
 
 class App extends Component {
   render() {
@@ -25,7 +25,7 @@ class App extends Component {
             <Route exact path='/search' component={Search} />
             <Route exact path='/top' component={LinkList} />
             <Route exact path='/new/:page' component={LinkList} />
-            <Route exact path='/hi' component={Hi} />
+            <Route exact path='/filteredlist' component={FilteredList} />
           </Switch>
         </div>
       </div>
