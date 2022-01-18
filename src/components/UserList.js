@@ -44,12 +44,9 @@ export const FEED_QUERY = gql`
 
 const getLinksToRender = (isNewPage, data) => {
   if (isNewPage) {
-    return data.feed.links;
+    return data.feed.users;
   }
-  const rankedLinks = data.feed.links.slice();
-  rankedLinks.sort(
-    (l1, l2) => l2.votes.length - l1.votes.length
-  );
+  const rankedLinks = data.feed.users.slice();
   return rankedLinks;
 };
 
@@ -90,10 +87,10 @@ const UserList = () => {
       {data && (
         <>
           {getLinksToRender(isNewPage, data).map(
-            (link, index) => (
+            (user, index) => (
               <UserLink
-                key={link.id}
-                link={link}
+                key={user.id}
+                user={user}
                 index={index + pageIndex}
               />
             )

@@ -37,47 +37,21 @@ class UserList extends Component {
   {authToken && (
     <Mutation
     mutation={VOTE_MUTATION}
-    variables={{ linkId: this.props.link.id }}
-    update={(store, { data: { vote } }) =>
-      this.props.updateStoreAfterVote(store, vote, this.props.link.id)
-    }
+    variables={{ linkId: this.props.user.id }}
   >
-    {voteMutation => (
-      <div className="ml1 gray f11" onClick={voteMutation}>
-        ▲
-      </div>
-    )}
   </Mutation>  
   )}
 </div>
 
         <div className="ml1">
           <div>
-            <a href={this.props.link.url} target="_blank">{this.props.link.description}</a>
+            {this.props.user.name}
           </div>
           <div className="f6 lh-copy gray">
-            {/* {this.props.link.votes.length} votes  */}
-            {/* ~ first voter  */}
-            {/* {this.props.link.votes[0] 
-              ? this.props.link.votes[0].user.name 
-              : 'hi'}{''} | by{' '} */}
-            {/* {this.props.link.postedBy
-              ? this.props.link.postedBy.name
-              : 'Unknown'}{' '}
-            {timeDifferenceForDate(this.props.link.createdAt)}
-            {this.props.link.votes[0]
-              ? ' ___ first voter: '+this.props.link.votes[0].user.name + ' last voter: '+this.props.link.votes[this.props.link.votes.length-1].user.name
-              : ''}
-              
-             ___tag: {this.props.link.tag} */}
+            
+            
              
-            {/* {this.props.link.votes[0]
-              ? ' ___user names: first '+this.props.link.votes[0].user.name + ' last '+this.props.link.votes[this.props.link.votes.length-1].user.name
-              : ''} */}
-
-            {/* {this.props.link.votes[0]
-              ? ' ____ social credit score: first: '+this.props.link.votes[0].user.socialCreditScore + ' last: '+this.props.link.votes[this.props.link.votes.length-1].user.socialCreditScore
-              : ''} */}
+          
           </div>
         </div>
       </div>
