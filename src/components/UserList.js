@@ -37,6 +37,7 @@ export const FEED_QUERY = gql`
       count
       users{
         name
+        email
       }
     }
   }

@@ -18,6 +18,7 @@ const VOTE_MUTATION = gql`
       }
       user {
         id
+        email
       }
     }
   }
@@ -45,7 +46,8 @@ class UserList extends Component {
 
         <div className="ml1">
           <div>
-            {this.props.user.name}
+            NAME: {this.props.user.name}
+              ___ EMAIL: {this.props.user.email}
           </div>
           <div className="f6 lh-copy gray">
             
