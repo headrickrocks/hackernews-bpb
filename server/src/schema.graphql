@@ -6,6 +6,7 @@ type Query {
     take: Int
     orderBy: LinkOrderByInput
     userOrderBy: UserOrderByInput
+    commentOrderBy: CommentOrderByInput
   ): Feed!
 }
 
@@ -14,10 +15,12 @@ type Feed {
   links: [Link!]!
   count: Int!
   users: [User!]
+  comments: [Comment!]
 }
 
 type Mutation {
   post(url: String!, description: String!, tag: String): Link!
+  comment(title: String!, content: String!): Comment!
   signup(
     email: String!
     password: String!
@@ -30,6 +33,7 @@ type Mutation {
 type Subscription {
   newLink: Link
   newVote: Vote
+  newComment: Comment
 }
 
 type AuthPayload {
@@ -54,6 +58,13 @@ type Link {
   tag: String
 }
 
+type Comment {
+  id: ID!
+  title: String
+  content: String
+  postedBy: User
+}
+
 type Vote {
   id: ID!
   link: Link!
@@ -69,6 +80,12 @@ input LinkOrderByInput {
 input UserOrderByInput {
   name: Sort
   email: Sort
+  id: Sort
+}
+
+input CommentOrderByInput {
+  title: Sort
+  content: Sort
   id: Sort
 }
 

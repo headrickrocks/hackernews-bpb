@@ -23,12 +23,22 @@ async function feed(parent, args, context, info) {
     userOrderBy: args.userOrderBy
   });
 
+  // const comments = await context.prisma.comment.findMany();
+
+  const comments = await context.prisma.comment.findMany({
+    where,
+    skip: args.skip,
+    take: args.take,
+    commentOrderBy: args.commentOrderBy
+  });
+
   const count = await context.prisma.link.count({ where });
 
   return {
     id: 'main-feed',
     links,
     users,
+    comments,
     count
   };
 }
